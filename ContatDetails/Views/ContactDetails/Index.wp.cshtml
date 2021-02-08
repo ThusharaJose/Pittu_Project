@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ContatDetails.Contact>
+@{
+    Layout = "~/Views/Shared/_Layout.wp.cshtml";
+    ViewBag.Title = "Contacts";
+}
+@section Header{
+    <div data-role="button" data-icon="plus" class="ui-btn-right">
+        @Html.ActionLink("New", "Create")
+    </div>
+}
+
+
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider"></li>
+    @foreach (var item in Model)
+    {
+        <li>
+           
+                <h3>
+                    @item.Name
+                </h3>
+            
+        </li>
+    }
+</ul>
